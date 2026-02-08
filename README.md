@@ -45,11 +45,15 @@ OPTIONS (
   uris = ['gs://dezoomcamp_hw3_2025/yellow_tripdata_2024-*.parquet']
 );
 
+
 ✅ Question 1: Counting records
+
 
 SELECT COUNT(*)
 FROM `zoomcamp-mod3-datawarehouse.trips_data_all.yellow_taxi`;
 Answer:
+
+
 ✅ 20,332,093
 
 ✅ Question 2: Data read estimation
