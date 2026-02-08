@@ -147,8 +147,7 @@ FROM `zoomcamp-mod3-datawarehouse.trips_data_all.yellow_taxi`;
 ```
 
 Explanation:
-**BigQuery scans all columns for COUNT(*) unless using metadata-optimized COUNT; estimated bytes processed equals table size.
-**
+**BigQuery scans all columns for COUNT(*) unless using metadata-optimized COUNT; estimated bytes processed equals table size.**
 
 
 ## 📌 Submission Notes
