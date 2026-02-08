@@ -54,7 +54,7 @@ FROM `zoomcamp-mod3-datawarehouse.trips_data_all.yellow_taxi`;
 ```
 Answer:
 
-✅ 20,332,093
+✅ **85,431,289**
 
 ✅ Question 2: Data read estimation
 
@@ -67,7 +67,7 @@ FROM `zoomcamp-mod3-datawarehouse.trips_data_all.yellow_taxi`;
 ```
 
 Answer:
-✅ 18.82 MB for the External Table and 47.60 MB for the Materialized Table
+✅ **18.82 MB for the External Table and 47.60 MB for the Materialized Table**
 
 ✅ Question 3: Understanding columnar storage
 
@@ -79,8 +79,8 @@ FROM `zoomcamp-mod3-datawarehouse.trips_data_all.yellow_taxi`;
 ```
 
 Answer:
-✅ BigQuery is a columnar database and only scans requested columns.
-Querying two columns reads more data than querying one.
+✅ **BigQuery is a columnar database and only scans requested columns.
+Querying two columns reads more data than querying one.**
 
 ✅ Question 4: Counting zero fare trips
 
@@ -91,12 +91,12 @@ WHERE fare_amount = 0;
 ```
 
 Answer:
-✅ 546,578
+✅ **128,210**
 
 ✅ Question 5: Partitioning and clustering
 
 Best strategy:
-✅ Partition by tpep_dropoff_datetime and cluster by VendorID
+✅ **Partition by tpep_dropoff_datetime and cluster by VendorID**
 
 ```sql
 CREATE OR REPLACE TABLE
@@ -127,17 +127,17 @@ BETWEEN '2024-03-01' AND '2024-03-15';
 ```
 
 Answer:
-✅ 310.24 MB for non-partitioned table and 26.84 MB for the partitioned table
+✅ **310.24 MB for non-partitioned table and 26.84 MB for the partitioned table**
 
 ✅ Question 7: External table storage
 
 Answer:
-✅ Google Cloud Storage (GCS Bucket)
+✅ **Google Cloud Storage (GCS Bucket)**
 
 ✅ Question 8: Clustering best practices
 
 Answer:
-✅ False
+✅ **False**
 
 🧠 Question 9: Understanding table scans (No points)
 
@@ -147,4 +147,15 @@ FROM `zoomcamp-mod3-datawarehouse.trips_data_all.yellow_taxi`;
 ```
 
 Explanation:
-BigQuery uses table metadata for COUNT(*), so it does not scan the full table, resulting in ~0 MB processed.
+**BigQuery scans all columns for COUNT(*) unless using metadata-optimized COUNT; estimated bytes processed equals table size.
+**
+
+
+## 📌 Submission Notes
+
+- GCS Bucket: gs://dezoomcamp_hw3_2025
+- BigQuery Project: zoomcamp-mod3-datawarehouse
+- Dataset: trips_data_all
+- All 6 months of Yellow Taxi 2024 data loaded
+- External, materialized, and partitioned tables created
+
