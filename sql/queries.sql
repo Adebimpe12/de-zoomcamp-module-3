@@ -1,1 +1,21 @@
+-- Q1
+SELECT COUNT(*) FROM `your_project.your_dataset.yellow_taxi`;
+
+-- Q2
+SELECT COUNT(DISTINCT PULocationID)
+FROM `your_project.your_dataset.yellow_taxi_external`;
+
+-- Q3
+SELECT PULocationID FROM `your_project.your_dataset.yellow_taxi`;
+SELECT PULocationID, DOLocationID FROM `your_project.your_dataset.yellow_taxi`;
+
+-- Q4
+SELECT COUNT(*)
+FROM `your_project.your_dataset.yellow_taxi`
+WHERE fare_amount = 0;
+
+-- Q6
+SELECT DISTINCT VendorID
+FROM `your_project.your_dataset.yellow_taxi_partitioned`
+WHERE tpep_dropoff_datetime BETWEEN '2024-03-01' AND '2024-03-15';
 
