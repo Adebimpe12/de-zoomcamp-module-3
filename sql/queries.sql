@@ -14,6 +14,9 @@ SELECT COUNT(*)
 FROM `your_project.your_dataset.yellow_taxi`
 WHERE fare_amount = 0;
 
+
+-- Q5: (Strategy implemented in partitioned_table.sql)
+
 -- Q6
 SELECT DISTINCT VendorID
 FROM `your_project.your_dataset.yellow_taxi_partitioned`
