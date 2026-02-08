@@ -44,12 +44,14 @@ OPTIONS (
   format = 'PARQUET',
   uris = ['gs://dezoomcamp_hw3_2025/yellow_tripdata_2024-*.parquet']
 );
+```
 
 ✅ Question 1: Counting records
 
 ```sql
 SELECT COUNT(*)
 FROM `zoomcamp-mod3-datawarehouse.trips_data_all.yellow_taxi`;
+```
 Answer:
 
 ✅ 20,332,093
@@ -62,6 +64,7 @@ FROM `zoomcamp-mod3-datawarehouse.trips_data_all.yellow_taxi_external`;
 
 SELECT COUNT(DISTINCT PULocationID)
 FROM `zoomcamp-mod3-datawarehouse.trips_data_all.yellow_taxi`;
+```
 
 Answer:
 ✅ 18.82 MB for the External Table and 47.60 MB for the Materialized Table
@@ -73,6 +76,7 @@ SELECT PULocationID
 FROM `zoomcamp-mod3-datawarehouse.trips_data_all.yellow_taxi`;
 SELECT PULocationID, DOLocationID
 FROM `zoomcamp-mod3-datawarehouse.trips_data_all.yellow_taxi`;
+```
 
 Answer:
 ✅ BigQuery is a columnar database and only scans requested columns.
@@ -84,6 +88,7 @@ Querying two columns reads more data than querying one.
 SELECT COUNT(*)
 FROM `zoomcamp-mod3-datawarehouse.trips_data_all.yellow_taxi`
 WHERE fare_amount = 0;
+```
 
 Answer:
 ✅ 546,578
@@ -100,6 +105,7 @@ PARTITION BY DATE(tpep_dropoff_datetime)
 CLUSTER BY VendorID AS
 SELECT *
 FROM `zoomcamp-mod3-datawarehouse.trips_data_all.yellow_taxi`;
+```
 
 ✅ Question 6: Partition benefits
 Non-partitioned table
@@ -109,6 +115,7 @@ SELECT DISTINCT VendorID
 FROM `zoomcamp-mod3-datawarehouse.trips_data_all.yellow_taxi`
 WHERE tpep_dropoff_datetime
 BETWEEN '2024-03-01' AND '2024-03-15';
+```
 
 Partitioned table
 
@@ -117,6 +124,7 @@ SELECT DISTINCT VendorID
 FROM `zoomcamp-mod3-datawarehouse.trips_data_all.yellow_taxi_partitioned`
 WHERE tpep_dropoff_datetime
 BETWEEN '2024-03-01' AND '2024-03-15';
+```
 
 Answer:
 ✅ 310.24 MB for non-partitioned table and 26.84 MB for the partitioned table
@@ -136,6 +144,7 @@ Answer:
 ```sql
 SELECT COUNT(*)
 FROM `zoomcamp-mod3-datawarehouse.trips_data_all.yellow_taxi`;
+```
 
 Explanation:
 BigQuery uses table metadata for COUNT(*), so it does not scan the full table, resulting in ~0 MB processed.
