@@ -19,3 +19,7 @@ SELECT DISTINCT VendorID
 FROM `your_project.your_dataset.yellow_taxi_partitioned`
 WHERE tpep_dropoff_datetime BETWEEN '2024-03-01' AND '2024-03-15';
 
+-- Q9
+SELECT COUNT(*)
+FROM `zoomcamp-mod3-datawarehouse.trips_data_all.yellow_taxi`;
+
